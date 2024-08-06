@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>คำนวณดอกเบี้ยง่ายๆ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>คำนวณดอกเบี้ยง่ายๆ</h1>
+    <label for="principal">เงินต้น:</label>
+    <input type="number" id="principal">
+    <br>
+    <label for="rate">อัตราดอกเบี้ย (%):</label>
+    <input type="number" id="rate">
+    <br>
+    <label for="time">จำนวนปี:</label>
+    <input type="number" id="time">
+    <br>
+    <button onclick="calculateInterest()">คำนวณ</button>
+    <p id="result"></p>
+    <script>function calculateInterest() {
+    // Get input values
+    const principal = parseFloat(document.getElementById('principal').value);
+    const rate = parseFloat(document.getElementById('rate').value);
+    const time = parseFloat(document.getElementById('time').value);
+
+    // Calculate simple interest
+    const interest = (principal * rate * time) / 100;
+
+    // Display result
+    document.getElementById('result').textContent = `ดอกเบี้ยทั้งหมด: ${interest.toFixed(2)} บาท`;
+}
+</script>
+</body>
+</html>
